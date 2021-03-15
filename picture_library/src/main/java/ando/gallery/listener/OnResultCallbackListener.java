@@ -4,6 +4,8 @@ import android.app.Activity;
 
 import java.util.List;
 
+import ando.gallery.entity.LocalMedia;
+
 public interface OnResultCallbackListener {
     default void onStart(Activity activity) {
     }
@@ -11,7 +13,7 @@ public interface OnResultCallbackListener {
     /**
      * return LocalMedia result
      */
-    void onResult(List<?> result);
+    void onResult(List<LocalMedia> result);
 
     /**
      * Cancel

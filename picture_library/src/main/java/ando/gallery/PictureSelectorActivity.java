@@ -1831,11 +1831,11 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                 dismissDialog();
                 // Refresh the system library
                 if (!SdkVersionUtils.checkedAndroid_Q()) {
-//                    if (config.isFallbackVersion3) {
-//                        new PictureMediaScannerConnection(getContext(), config.cameraPath);
-//                    } else {
-//                        sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(config.cameraPath))));
-//                    }
+//                  if (config.isFallbackVersion3) {
+//                      new PictureMediaScannerConnection(getContext(), config.cameraPath);
+//                  } else {
+//                      sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(config.cameraPath))));
+//                  }
                     sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(config.cameraPath))));
                 }
                 // add data Adapter
@@ -1849,13 +1849,10 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
                 }
             }
         });
-
     }
 
     /**
      * Update Adapter Data
-     *
-     * @param media
      */
     private void notifyAdapterData(LocalMedia media) {
         if (mAdapter != null) {
@@ -1890,8 +1887,6 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
 
     /**
      * After using Camera, MultiSelect mode handles the logic
-     *
-     * @param media
      */
     private void dispatchHandleMultiple(LocalMedia media) {
         List<LocalMedia> selectedData = mAdapter.getSelectedData();
@@ -1954,17 +1949,14 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
 
     /**
      * After using the camera, the radio mode handles the logic
-     *
-     * @param media
      */
     private void dispatchHandleSingle(LocalMedia media) {
+        List<LocalMedia> selectedData = mAdapter.getSelectedData();
         if (config.isSingleDirectReturn) {
-            List<LocalMedia> selectedData = mAdapter.getSelectedData();
             selectedData.add(media);
             mAdapter.bindSelectData(selectedData);
             singleDirectReturnCameraHandleResult(media.getMimeType());
         } else {
-            List<LocalMedia> selectedData = mAdapter.getSelectedData();
             String mimeType = selectedData.size() > 0 ? selectedData.get(0).getMimeType() : "";
             boolean mimeTypeSame = PictureMimeType.isMimeTypeSame(mimeType, media.getMimeType());
             if (mimeTypeSame || selectedData.size() == 0) {
@@ -1977,8 +1969,6 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
 
     /**
      * Verify the validity of the video
-     *
-     * @param media
      */
     private boolean checkVideoLegitimacy(LocalMedia media) {
         boolean isEnterNext = true;
@@ -2008,8 +1998,6 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
 
     /**
      * Single picture clipping callback
-     *
-     * @param data
      */
     private void singleCropHandleResult(Intent data) {
         if (data == null) {
@@ -2077,8 +2065,6 @@ public class PictureSelectorActivity extends PictureBaseActivity implements View
 
     /**
      * Multiple picture crop
-     *
-     * @param data
      */
     protected void multiCropHandleResult(Intent data) {
         if (data == null) {

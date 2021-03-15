@@ -1,17 +1,10 @@
 package ando.gallery.entity;
 
-
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
 import ando.gallery.config.PictureConfig;
-
-/**
- * @author：luck
- * 2017-5-24 16:21
- * Media Entity
- */
 
 public class LocalMedia implements Parcelable {
     /**

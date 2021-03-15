@@ -988,8 +988,7 @@ public class PicturePreviewActivity extends PictureBaseActivity implements
                 int imageNum = 0;
                 for (int i = 0; i < count; i++) {
                     LocalMedia media = selectData.get(i);
-                    if (media == null
-                            || TextUtils.isEmpty(media.getPath())) {
+                    if (media == null || TextUtils.isEmpty(media.getPath())) {
                         continue;
                     }
                     if (PictureMimeType.isHasImage(media.getMimeType())) {
@@ -1023,9 +1022,6 @@ public class PicturePreviewActivity extends PictureBaseActivity implements
 
     /**
      * 同一类型的图片或视频处理逻辑
-     *
-     * @param mimeType
-     * @param image
      */
     private void separateMimeTypeWith(String mimeType, LocalMedia image) {
         if (config.enableCrop && PictureMimeType.isHasImage(mimeType)) {
@@ -1086,6 +1082,8 @@ public class PicturePreviewActivity extends PictureBaseActivity implements
                     }
                     finish();
                     break;
+                default:
+                    break;
             }
         } else if (resultCode == UCrop.RESULT_ERROR) {
             Throwable throwable = (Throwable) data.getSerializableExtra(UCrop.EXTRA_ERROR);
@@ -1095,13 +1093,11 @@ public class PicturePreviewActivity extends PictureBaseActivity implements
         }
     }
 
-
     @Override
     public void onBackPressed() {
         updateResult();
         finish();
         overridePendingTransition(0, PictureSelectionConfig.windowAnimationStyle.activityPreviewExitAnimation);
-
     }
 
     /**

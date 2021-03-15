@@ -45,6 +45,8 @@ dependencies {
     implementation "androidx.camera:camera-lifecycle:${cfgs.camerax_version}"
     implementation "androidx.localbroadcastmanager:localbroadcastmanager:${cfgs.localbroadcastmanager}"
     implementation "androidx.camera:camera-view:${cfgs.camerax_view}"
+
+    //implementation "ando.file:core:${cfgs.ando_file_operator}"
     api project(':ucrop')
 }
 
