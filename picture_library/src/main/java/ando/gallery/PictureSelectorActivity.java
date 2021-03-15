@@ -70,8 +70,8 @@ import ando.gallery.tools.ValueOf;
 import ando.gallery.widget.FolderPopWindow;
 import ando.gallery.widget.RecyclerPreloadView;
 
-import com.yalantis.ucrop.UCrop;
-import com.yalantis.ucrop.model.CutInfo;
+import ando.gallery.ucrop.UCrop;
+import ando.gallery.ucrop.model.CutInfo;
 
 import org.jetbrains.annotations.NotNull;
 

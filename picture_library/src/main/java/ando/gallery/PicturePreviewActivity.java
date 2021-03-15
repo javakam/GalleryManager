@@ -20,8 +20,8 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
-import com.yalantis.ucrop.UCrop;
-import com.yalantis.ucrop.model.CutInfo;
+import ando.gallery.ucrop.UCrop;
+import ando.gallery.ucrop.model.CutInfo;
 
 import org.jetbrains.annotations.NotNull;
 

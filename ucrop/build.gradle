@@ -1,4 +1,9 @@
-apply plugin: 'com.android.library'
+plugins {
+    id 'com.android.library'
+    //id 'kotlin-android'
+    //id 'com.novoda.bintray-release'
+    id 'com.github.panpf.bintray-publish'
+}
 
 android {
     compileSdkVersion cfgs.compileSdkVersion
@@ -25,9 +30,7 @@ android {
     lintOptions {
         abortOnError false
     }
-
     resourcePrefix 'ucrop_'
-
 }
 
 dependencies {
@@ -35,4 +38,15 @@ dependencies {
     implementation "androidx.exifinterface:exifinterface:${cfgs.androidx_exifinterface_version}"
     implementation "androidx.transition:transition:${cfgs.androidx_transition_version}"
     implementation "androidx.recyclerview:recyclerview:${cfgs.version_recyclerview}"
+}
+
+publish {
+    repoName = 'maven'
+    userOrg = 'javakam'
+    groupId = 'ando.gallery'
+    artifactId = 'gallery'
+    publishVersion = cfgs.versionName
+    desc = 'Modified from https://github.com/LuckSiege/PictureSelector'
+    website = "https://github.com/javakam/${rootProject.name}"
+    //dryRun = true
 }

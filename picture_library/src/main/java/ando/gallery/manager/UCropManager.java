@@ -15,8 +15,8 @@ import ando.gallery.tools.PictureFileUtils;
 import ando.gallery.tools.SdkVersionUtils;
 import ando.gallery.tools.StringUtils;
 import ando.gallery.tools.ToastUtils;
-import com.yalantis.ucrop.UCrop;
-import com.yalantis.ucrop.model.CutInfo;
+import ando.gallery.ucrop.UCrop;
+import ando.gallery.ucrop.model.CutInfo;
 
 import java.io.File;
 import java.util.ArrayList;

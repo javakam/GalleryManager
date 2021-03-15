@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 
-import com.yalantis.ucrop.UCrop;
+import ando.gallery.ucrop.UCrop;
 
 import java.io.File;
 import java.util.ArrayList;

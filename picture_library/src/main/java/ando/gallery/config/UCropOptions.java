@@ -3,7 +3,7 @@ package ando.gallery.config;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.yalantis.ucrop.UCrop;
+import ando.gallery.ucrop.UCrop;
 
 /**
  * @author：luck
