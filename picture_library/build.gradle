@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+    //id 'kotlin-android'
+    //id 'com.novoda.bintray-release'
+    id 'com.github.panpf.bintray-publish'
+}
+
+android {
+    compileSdkVersion cfgs.compileSdkVersion
+    buildToolsVersion cfgs.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion cfgs.minSdkVersion
+        targetSdkVersion cfgs.targetSdkVersion
+        versionCode cfgs.versionCode
+        versionName cfgs.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+//    kotlinOptions {
+//        jvmTarget = "1.8"
+//    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.appcompat:appcompat:${cfgs.version_appcompat}"
+    implementation "androidx.recyclerview:recyclerview:${cfgs.version_recyclerview}"
+    implementation "androidx.concurrent:concurrent-futures:${cfgs.futures_version}"
+    implementation "androidx.annotation:annotation-experimental:${cfgs.experimental_version}"
+    implementation "com.squareup.okio:okio:${cfgs.okio_version}"
+    implementation "androidx.exifinterface:exifinterface:${cfgs.androidx_exifinterface_version}"
+    implementation "androidx.camera:camera-lifecycle:${cfgs.camerax_version}"
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:${cfgs.localbroadcastmanager}"
+    implementation "androidx.camera:camera-view:${cfgs.camerax_view}"
+    api project(':ucrop')
+}
+
+//https://github.com/novoda/bintray-release/wiki/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3HOME
+//https://github.com/panpf/bintray-publish
+publish {
+    repoName = 'maven'
+    userOrg = 'javakam'
+    groupId = 'ando.gallery'
+    artifactId = 'gallery'
+    publishVersion = cfgs.versionName
+    desc = 'Modified from https://github.com/LuckSiege/PictureSelector'
+    website = "https://github.com/javakam/${rootProject.name}"
+    //dryRun = true
+}
