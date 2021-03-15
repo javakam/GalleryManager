@@ -44,7 +44,7 @@ publish {
     repoName = 'maven'
     userOrg = 'javakam'
     groupId = 'ando.gallery'
-    artifactId = 'gallery'
+    artifactId = 'ucrop'
     publishVersion = cfgs.versionName
     desc = 'Modified from https://github.com/LuckSiege/PictureSelector'
     website = "https://github.com/javakam/${rootProject.name}"
