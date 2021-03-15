@@ -4,11 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.util.DisplayMetrics;
 
-/**
- * @author：luck
- * 2017-5-30 19:30
- * ScreenUtils
- */
 public class ScreenUtils {
     /**
      * dp2px

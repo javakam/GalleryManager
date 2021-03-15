@@ -15,6 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
 import ando.gallery.R;
 import ando.gallery.adapter.PictureAlbumDirectoryAdapter;
 import ando.gallery.config.PictureSelectionConfig;
@@ -25,14 +27,9 @@ import ando.gallery.tools.AnimUtils;
 import ando.gallery.tools.AttrsUtils;
 import ando.gallery.tools.ScreenUtils;
 
-import java.util.List;
-
 /**
- * @author：luck
- * 2017-5-25 17:02
  * 文件目录PopupWindow
  */
-
 public class FolderPopWindow extends PopupWindow {
     private Context context;
     private View window;

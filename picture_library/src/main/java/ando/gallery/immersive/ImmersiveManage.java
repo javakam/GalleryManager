@@ -26,9 +26,7 @@ public class ImmersiveManage {
         }
     }
 
-
     /**
-     * @param baseActivity
      * @param statusBarColor     状态栏的颜色
      * @param navigationBarColor 导航栏的颜色
      */
@@ -63,8 +61,6 @@ public class ImmersiveManage {
                             , isDarkStatusBarIcon);
 
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-
                 } else if (!isMarginStatusBar) {
                     window.requestFeature(Window.FEATURE_NO_TITLE);
                     window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
@@ -75,8 +71,6 @@ public class ImmersiveManage {
                             , isDarkStatusBarIcon);
 
                     window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-
-
                 } else {
                     //留出来状态栏 不留出来导航栏 没找到办法。。
                     return;
@@ -84,9 +78,9 @@ public class ImmersiveManage {
 
                 window.setStatusBarColor(statusBarColor);
                 window.setNavigationBarColor(navigationBarColor);
-
             }
         } catch (Exception e) {
         }
     }
+
 }
