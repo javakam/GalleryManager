@@ -4,12 +4,8 @@
 
 ## 引入
 ```
-repositories {
-    maven { url "https://dl.bintray.com/javakam/maven" }
-}
+implementation 'com.github.javakam:gallery:1.5.0@aar'
 ```
-
-`implementation 'ando.gallery:gallery:1.5.0'`
 
 ## 做的修改
 1. 移除了冗余代码
