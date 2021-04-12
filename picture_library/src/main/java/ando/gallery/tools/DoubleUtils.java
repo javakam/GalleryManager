@@ -3,7 +3,7 @@ package ando.gallery.tools;
 /**
  * author：luck
  * project：PictureSelector
- * package：com.luck.picture.lib.tool
+ * package：ando.gallery.tool
  * email：893855882@qq.com
  * data：2017/5/25
  */

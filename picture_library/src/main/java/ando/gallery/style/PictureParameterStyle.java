@@ -8,11 +8,7 @@ import androidx.annotation.DrawableRes;
 import ando.gallery.R;
 
 /**
- * @author：luck
- * 2019-11-22 17:24
- * 相册动态样式参数设置 <p>
- * {@link PictureSelectorUIStyle}
- * </p>
+ * 相册动态样式参数设置 {@link PictureSelectorUIStyle}
  */
 public class PictureParameterStyle {
     /**
@@ -27,92 +23,76 @@ public class PictureParameterStyle {
      * 是否开启QQ 数字选择风格
      */
     public boolean isOpenCheckNumStyle;
-
     /**
      * 开启新选择风格
      */
     public boolean isNewSelectStyle;
-
     /**
      * 状态栏色值
      */
     @ColorInt
     public int pictureStatusBarColor;
-
     /**
      * 标题栏背景色
      */
     @ColorInt
     public int pictureTitleBarBackgroundColor;
-
     /**
      * 相册父容器背景色
      */
     @ColorInt
     public int pictureContainerBackgroundColor;
-
     /**
      * 相册标题色值
      */
     @ColorInt
     public int pictureTitleTextColor;
-
     /**
      * 相册标题字体大小
      */
     public int pictureTitleTextSize;
-
     /**
      * 相册右侧按钮色值
      */
     @ColorInt
     public int pictureRightDefaultTextColor;
-
     /**
      * 相册右侧文字字体大小
      */
     public int pictureRightTextSize;
-
     /**
      * 相册右侧按钮文本
      */
     public String pictureRightDefaultText;
-
     /**
      * 相册右侧按钮色值
      */
     @ColorInt
     public int pictureRightSelectedTextColor;
-
     /**
      * 相册列表底部背景色
      */
     @ColorInt
     public int pictureBottomBgColor;
-
     /**
      * 相册列表已完成按钮色值
      */
     @ColorInt
     public int pictureCompleteTextColor;
-
     /**
      * 相册列表未完成按钮色值
      */
     @ColorInt
     public int pictureUnCompleteTextColor;
-
     /**
      * 相册列表完成按钮字体大小
      */
     public int pictureCompleteTextSize;
-
     /**
      * 相册列表不可预览文字颜色
      */
     @ColorInt
     public int pictureUnPreviewTextColor;
-
     /**
      * 相册列表预览文字大小
      */

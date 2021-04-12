@@ -9,8 +9,6 @@ import ando.gallery.app.PictureAppMaster;
 import ando.gallery.tools.ScreenUtils;
 
 /**
- * @author：luck
- * 2020/11/22 11:26 AM
  * PictureUIStyle
  */
 public class PictureSelectorUIStyle {
