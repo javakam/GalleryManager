@@ -13,6 +13,12 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import ando.gallery.R;
 import ando.gallery.config.PictureConfig;
 import ando.gallery.config.PictureMimeType;
@@ -24,12 +30,6 @@ import ando.gallery.tools.MediaUtils;
 import ando.gallery.widget.longimage.ImageSource;
 import ando.gallery.widget.longimage.ImageViewState;
 import ando.gallery.widget.longimage.SubsamplingScaleImageView;
-
-import org.jetbrains.annotations.NotNull;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PictureSimpleFragmentAdapter extends PagerAdapter {
     private List<LocalMedia> data;
@@ -83,8 +83,6 @@ public class PictureSimpleFragmentAdapter extends PagerAdapter {
 
     /**
      * get data
-     *
-     *
      */
     public List<LocalMedia> getData() {
         return data == null ? new ArrayList<>() : data;
@@ -181,8 +179,7 @@ public class PictureSimpleFragmentAdapter extends PagerAdapter {
 
             if (isGif && !media.isCompressed()) {
                 if (config != null && PictureSelectionConfig.imageEngine != null) {
-                    PictureSelectionConfig.imageEngine.loadAsGifImage
-                            (contentView.getContext(), path, imageView);
+                    PictureSelectionConfig.imageEngine.loadAsGifImage(path, imageView);
                 }
             } else {
                 if (config != null && PictureSelectionConfig.imageEngine != null) {
@@ -190,8 +187,7 @@ public class PictureSimpleFragmentAdapter extends PagerAdapter {
                         displayLongPic(PictureMimeType.isContent(path)
                                 ? Uri.parse(path) : Uri.fromFile(new File(path)), longImg);
                     } else {
-                        PictureSelectionConfig.imageEngine.loadImage
-                                (contentView.getContext(), path, imageView);
+                        PictureSelectionConfig.imageEngine.loadImage(path, imageView);
                     }
                 }
             }
@@ -203,9 +199,6 @@ public class PictureSimpleFragmentAdapter extends PagerAdapter {
 
     /**
      * load long image
-     *
-     * @param uri
-     * @param longImg
      */
     private void displayLongPic(Uri uri, SubsamplingScaleImageView longImg) {
         longImg.setQuickScaleEnabled(true);

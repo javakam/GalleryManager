@@ -23,6 +23,14 @@ import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import java.io.File;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 import ando.gallery.broadcast.BroadcastAction;
 import ando.gallery.broadcast.BroadcastManager;
 import ando.gallery.config.PictureConfig;
@@ -46,16 +54,6 @@ import ando.gallery.widget.PreviewViewPager;
 import ando.gallery.widget.longimage.ImageSource;
 import ando.gallery.widget.longimage.ImageViewState;
 import ando.gallery.widget.longimage.SubsamplingScaleImageView;
-import ando.gallery.R;
-
-import java.io.File;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-
 import okio.BufferedSource;
 import okio.Okio;
 
@@ -232,12 +230,13 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
         }
 
         @Override
-        public boolean isViewFromObject(View view, Object object) {
+        public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
             return view == object;
         }
 
+        @NonNull
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
+        public Object instantiateItem(@NonNull ViewGroup container, int position) {
             View contentView = mCacheView.get(position);
             if (contentView == null) {
                 contentView = LayoutInflater.from(container.getContext())
@@ -277,14 +276,13 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
                 // 压缩过的gif就不是gif了
                 if (isGif && !media.isCompressed()) {
                     if (PictureSelectionConfig.imageEngine != null) {
-                        PictureSelectionConfig.imageEngine.loadAsGifImage
-                                (getContext(), path, imageView);
+                        PictureSelectionConfig.imageEngine.loadAsGifImage(path, imageView);
                     }
                 } else {
                     if (PictureSelectionConfig.imageEngine != null) {
                         if (isHttp) {
                             // 网络图片
-                            PictureSelectionConfig.imageEngine.loadImage(contentView.getContext(), path,
+                            PictureSelectionConfig.imageEngine.loadImage(path,
                                     imageView, longImageView, new OnImageCompleteCallback() {
                                         @Override
                                         public void onShowLoading() {
@@ -301,7 +299,7 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
                                 displayLongPic(PictureMimeType.isContent(path)
                                         ? Uri.parse(path) : Uri.fromFile(new File(path)), longImageView);
                             } else {
-                                PictureSelectionConfig.imageEngine.loadImage(contentView.getContext(), path, imageView);
+                                PictureSelectionConfig.imageEngine.loadImage(path, imageView);
                             }
                         }
                     }
@@ -436,8 +434,6 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
 
     /**
      * 保存相片至本地相册
-     *
-     * @throws Exception
      */
     private void savePictureAlbum() throws Exception {
         String suffix = PictureMimeType.getLastImgSuffix(mMimeType);
@@ -459,8 +455,6 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
 
     /**
      * 图片保存成功
-     *
-     * @param result
      */
     private void onSuccessful(String result) {
         dismissDialog();
@@ -483,8 +477,6 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
 
     /**
      * 保存图片到picture 目录，Android Q适配，最简单的做法就是保存到公共目录，不用SAF存储
-     *
-     * @param inputUri
      */
     private void savePictureAlbumAndroidQ(Uri inputUri) {
         ContentValues contentValues = new ContentValues();
@@ -530,8 +522,6 @@ public class PictureExternalPreviewActivity extends PictureBaseActivity implemen
 
     /**
      * 针对Q版本创建uri
-     *
-     *
      */
     private Uri createOutImageUri() {
         ContentValues contentValues = new ContentValues();

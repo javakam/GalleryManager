@@ -1,12 +1,11 @@
 ext {
     config = [
-            versionCode                   : 32,
-            versionName                   : "1.5.0",
-            compileSdkVersion             : 30,
-            buildToolsVersion             : "30.0.3",
-            minSdkVersion                 : 19,
-            targetSdkVersion              : 30,
-            ucropVersionCode              : 24,
-            ucropVersionName              : "2.2.4-non-native"
+            versionCode      : 33,
+            versionName      : "1.6.0",
+            compileSdkVersion: 30,
+            buildToolsVersion: "30.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 30,
+            versionPicture   : "2.0.0"
     ]
 }

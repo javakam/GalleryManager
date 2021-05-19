@@ -13,8 +13,15 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import ando.gallery.R;
 import ando.gallery.config.PictureConfig;
@@ -31,15 +38,8 @@ import ando.gallery.tools.StringUtils;
 import ando.gallery.tools.ToastUtils;
 import ando.gallery.tools.VoiceUtils;
 
-import org.jetbrains.annotations.NotNull;
-
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author：luck
- * 2016-12-30 12:02
+ * @author：luck 2016-12-30 12:02
  * PictureImageGridAdapter
  */
 public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -132,8 +132,9 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
         }
     }
 
+    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         if (viewType == PictureConfig.TYPE_CAMERA) {
             View view = LayoutInflater.from(context).inflate(R.layout.picture_item_camera, parent, false);
             return new CameraViewHolder(view);
@@ -184,7 +185,7 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
                 image.loadLongImageStatus = PictureConfig.NORMAL;
                 contentHolder.tvLongChart.setVisibility(View.GONE);
             }
-            boolean isHasVideo = PictureMimeType.isHasVideo(mimeType);
+            final boolean isHasVideo = PictureMimeType.isHasVideo(mimeType);
             if (isHasVideo) {
                 contentHolder.tvDuration.setVisibility(View.VISIBLE);
                 contentHolder.tvDuration.setText(DateUtils.formatDurationTime(image.getDuration()));
@@ -210,14 +211,13 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
                     }
                 } else {
                     contentHolder.tvDuration.setCompoundDrawablesRelativeWithIntrinsicBounds
-                            (isHasVideo ? R.drawable.picture_icon_video : R.drawable.picture_icon_audio,
-                                    0, 0, 0);
+                            (isHasVideo ? R.drawable.picture_icon_video : R.drawable.picture_icon_audio, 0, 0, 0);
                 }
             } else {
                 contentHolder.tvDuration.setVisibility(View.GONE);
             }
             if (PictureSelectionConfig.imageEngine != null) {
-                PictureSelectionConfig.imageEngine.loadGridImage(context, path, contentHolder.ivPicture);
+                PictureSelectionConfig.imageEngine.loadGridImage(path, contentHolder.ivPicture);
             }
 
             if (config.enablePreview || config.enPreviewVideo) {

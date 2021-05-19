@@ -8,17 +8,16 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ando.gallery.R;
 import ando.gallery.config.PictureMimeType;
 import ando.gallery.config.PictureSelectionConfig;
 import ando.gallery.entity.LocalMedia;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author：luck
- * 2019-11-30 20:50
+ * @author：luck 2019-11-30 20:50
  * WeChat style selected after image preview
  */
 public class PictureWeChatPreviewGalleryAdapter
@@ -69,7 +68,7 @@ public class PictureWeChatPreviewGalleryAdapter
         if (item != null) {
             holder.viewBorder.setVisibility(item.isChecked() ? View.VISIBLE : View.GONE);
             if (config != null && PictureSelectionConfig.imageEngine != null) {
-                PictureSelectionConfig.imageEngine.loadImage(holder.itemView.getContext(), item.getPath(), holder.ivImage);
+                PictureSelectionConfig.imageEngine.loadImage(item.getPath(), holder.ivImage);
             }
             holder.ivPlay.setVisibility(PictureMimeType.isHasVideo(item.getMimeType()) ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(v -> {

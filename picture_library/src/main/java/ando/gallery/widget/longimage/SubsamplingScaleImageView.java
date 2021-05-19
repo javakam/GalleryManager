@@ -30,7 +30,6 @@ import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
-import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build.VERSION;
@@ -48,8 +47,7 @@ import android.view.ViewParent;
 
 import androidx.annotation.AnyThread;
 import androidx.annotation.NonNull;
-
-import ando.gallery.R;
+import androidx.exifinterface.media.ExifInterface;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
@@ -62,6 +60,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
 
+import ando.gallery.R;
+
 /**
  * Displays an image subsampled as necessary to avoid loading too much image data into memory. After a pinch to zoom in,
  * a set of image tiles subsampled at higher resolution are loaded and displayed over the base layer. During pinch and
@@ -72,7 +72,7 @@ import java.util.concurrent.Executor;
  * v prefixes - coordinates, translations and distances measured in screen (view) pixels
  * s prefixes - coordinates, translations and distances measured in source image pixels (scaled)
  */
-@SuppressWarnings("unused")
+@SuppressWarnings({"deprecation", "unused"})
 public class SubsamplingScaleImageView extends View {
 
     private static final String TAG = SubsamplingScaleImageView.class.getSimpleName();
@@ -325,6 +325,7 @@ public class SubsamplingScaleImageView extends View {
         setDoubleTapZoomDpi(160);
         setGestureDetector(context);
         this.handler = new Handler(new Handler.Callback() {
+            @Override
             public boolean handleMessage(Message message) {
                 if (message.what == MESSAGE_LONG_CLICK && onLongClickListener != null) {
                     maxTouchCount = 0;

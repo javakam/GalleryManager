@@ -1,14 +1,15 @@
 package ando.gallery;
 
 import android.content.Context;
-import android.media.ExifInterface;
 import android.net.Uri;
+
+import androidx.exifinterface.media.ExifInterface;
+
+import java.io.InputStream;
 
 import ando.gallery.config.PictureMimeType;
 import ando.gallery.tools.PictureFileUtils;
 import ando.gallery.tools.SdkVersionUtils;
-
-import java.io.InputStream;
 
 /**
  * @author：luck
@@ -18,10 +19,6 @@ import java.io.InputStream;
 public class PictureSelectorExternalUtils {
     /**
      * 获取ExifInterface
-     *
-     * @param context
-     * @param url
-     *
      */
     public static ExifInterface getExifInterface(Context context, String url) {
         ExifInterface exifInterface = null;

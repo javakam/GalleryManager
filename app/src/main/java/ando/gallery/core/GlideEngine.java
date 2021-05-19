@@ -1,6 +1,5 @@
 package ando.gallery.core;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.PointF;
 import android.graphics.drawable.Drawable;
@@ -30,8 +29,8 @@ public class GlideEngine implements ImageEngine {
      * 加载图片
      */
     @Override
-    public void loadImage(@NonNull Context context, @NonNull String url, @NonNull ImageView imageView) {
-        Glide.with(context)
+    public void loadImage(@Nullable String url, @NonNull ImageView imageView) {
+        Glide.with(imageView.getContext())
                 .load(url)
                 .into(imageView);
     }
@@ -43,10 +42,10 @@ public class GlideEngine implements ImageEngine {
      * @param callback 网络图片加载回调监听 {link after version 2.5.1 Please use the #OnImageCompleteCallback#}
      */
     @Override
-    public void loadImage(@NonNull Context context, @NonNull String url,
+    public void loadImage(@Nullable String url,
                           @NonNull ImageView imageView,
                           SubsamplingScaleImageView longImageView, OnImageCompleteCallback callback) {
-        Glide.with(context)
+        Glide.with(imageView.getContext())
                 .asBitmap()
                 .load(url)
                 .into(new ImageViewTarget<Bitmap>(imageView) {
@@ -98,8 +97,8 @@ public class GlideEngine implements ImageEngine {
      * 加载相册目录
      */
     @Override
-    public void loadFolderImage(@NonNull Context context, @NonNull String url, @NonNull ImageView imageView) {
-        Glide.with(context)
+    public void loadFolderImage(@Nullable String url, @NonNull ImageView imageView) {
+        Glide.with(imageView.getContext())
                 .asBitmap()
                 .load(url)
                 .override(180, 180)
@@ -111,7 +110,7 @@ public class GlideEngine implements ImageEngine {
                     protected void setResource(Bitmap resource) {
                         RoundedBitmapDrawable circularBitmapDrawable =
                                 RoundedBitmapDrawableFactory.
-                                        create(context.getResources(), resource);
+                                        create(imageView.getContext().getResources(), resource);
                         circularBitmapDrawable.setCornerRadius(8);
                         imageView.setImageDrawable(circularBitmapDrawable);
                     }
@@ -122,9 +121,9 @@ public class GlideEngine implements ImageEngine {
      * 加载gif
      */
     @Override
-    public void loadAsGifImage(@NonNull Context context, @NonNull String url,
+    public void loadAsGifImage(@Nullable String url,
                                @NonNull ImageView imageView) {
-        Glide.with(context)
+        Glide.with(imageView.getContext())
                 .asGif()
                 .load(url)
                 .into(imageView);
@@ -134,8 +133,8 @@ public class GlideEngine implements ImageEngine {
      * 加载图片列表图片
      */
     @Override
-    public void loadGridImage(@NonNull Context context, @NonNull String url, @NonNull ImageView imageView) {
-        Glide.with(context)
+    public void loadGridImage(@Nullable String url, @NonNull ImageView imageView) {
+        Glide.with(imageView.getContext())
                 .load(url)
                 .override(200, 200)
                 .centerCrop()

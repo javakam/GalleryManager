@@ -1,6 +1,5 @@
 package ando.gallery;
 
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -150,7 +149,7 @@ public class PictureCustomCameraActivity extends PictureSelectorCameraEmptyActiv
         // 拍照预览
         mCameraView.setImageCallbackListener((file, imageView) -> {
             if (config != null && PictureSelectionConfig.imageEngine != null && file != null) {
-                PictureSelectionConfig.imageEngine.loadImage(getContext(), file.getAbsolutePath(), imageView);
+                PictureSelectionConfig.imageEngine.loadImage(file.getAbsolutePath(), imageView);
             }
         });
         // 设置拍照或拍视频回调监听

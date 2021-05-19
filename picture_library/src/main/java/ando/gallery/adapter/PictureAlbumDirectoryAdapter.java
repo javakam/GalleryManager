@@ -11,18 +11,17 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ando.gallery.R;
 import ando.gallery.config.PictureSelectionConfig;
 import ando.gallery.entity.LocalMediaFolder;
 import ando.gallery.listener.OnAlbumItemClickListener;
 import ando.gallery.tools.AttrsUtils;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * @author：luck
- * 2016-12-11 17:02
+ * @author：luck 2016-12-11 17:02
  * PictureAlbumDirectoryAdapter
  */
 public class PictureAlbumDirectoryAdapter extends RecyclerView.Adapter<PictureAlbumDirectoryAdapter.ViewHolder> {
@@ -75,8 +74,7 @@ public class PictureAlbumDirectoryAdapter extends RecyclerView.Adapter<PictureAl
         }
 
         if (PictureSelectionConfig.imageEngine != null) {
-            PictureSelectionConfig.imageEngine.loadFolderImage(holder.itemView.getContext(),
-                    imagePath, holder.ivFirstImage);
+            PictureSelectionConfig.imageEngine.loadFolderImage(imagePath, holder.ivFirstImage);
         }
 
         Context context = holder.itemView.getContext();
