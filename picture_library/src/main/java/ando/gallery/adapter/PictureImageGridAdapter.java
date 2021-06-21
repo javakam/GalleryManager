@@ -484,8 +484,8 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
         int size = selectData.size();
         for (int i = 0; i < size; i++) {
             LocalMedia media = selectData.get(i);
-            if (media.getPath().equals(imageBean.getPath())
-                    || media.getId() == imageBean.getId()) {
+            boolean isPathSame = (media.getPath() != null && imageBean.getPath() != null && media.getPath().equals(imageBean.getPath()));
+            if (isPathSame || media.getId() == imageBean.getId()) {
                 imageBean.setNum(media.getNum());
                 media.setPosition(imageBean.getPosition());
                 viewHolder.tvCheck.setText(String.valueOf(imageBean.getNum()));
@@ -495,11 +495,7 @@ public class PictureImageGridAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     /**
      * Update the selected status of the image
-     *
-     * @param contentHolder
-     * @param image
      */
-
     @SuppressLint("StringFormatMatches")
     private void changeCheckboxState(ViewHolder contentHolder, LocalMedia image) {
         boolean isChecked = contentHolder.tvCheck.isSelected();
