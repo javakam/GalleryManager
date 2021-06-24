@@ -38,8 +38,8 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.2.0"
 }
 
-//ext {
-//    PUBLISH_ARTIFACT_ID = 'gallery.ucrop'
-//    PUBLISH_VERSION = rootProject.ext.config.versionUcrop
-//}
-//apply from: "${rootProject.projectDir}/publish.gradle"
+ext {
+    PUBLISH_ARTIFACT_ID = 'gallery.ucrop'
+    PUBLISH_VERSION = rootProject.ext.config.versionUcrop
+}
+apply from: "${rootProject.projectDir}/publish.gradle"

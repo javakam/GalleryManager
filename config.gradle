@@ -6,7 +6,7 @@ ext {
             buildToolsVersion: "30.0.3",
             minSdkVersion    : 21,
             targetSdkVersion : 30,
-            versionUcrop     : "3.9.0",
-            versionPicture   : "3.9.0"
+            versionUcrop     : "4.0.0",
+            versionPicture   : "4.0.0"
     ]
 }
