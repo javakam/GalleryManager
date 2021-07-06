@@ -52,7 +52,7 @@ dependencies {
 
 ext {
     PUBLISH_ARTIFACT_ID = 'gallery'
-    PUBLISH_VERSION = rootProject.ext.cfgs.versionPicture
+    PUBLISH_VERSION = rootProject.ext.cfgs.versionPictureSelector
 }
 apply from: "${rootProject.projectDir}/publish.gradle"
 //apply from: '../publish.gradle'
