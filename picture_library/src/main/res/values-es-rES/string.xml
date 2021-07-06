@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="picture_all_audio">Todos los audios</string>
     <string name="picture_audio">Permiso de acceso al sistema de grabación denegado</string>
     <string name="picture_audio_empty">Puedes utilizar el sistema de grabación para grabar audios</string>
@@ -22,6 +22,7 @@
     <string name="picture_empty_title">No hay fotos o videos\n</string>
     <string name="picture_error">Foto corrupta</string>
     <string name="picture_gif_tag">gif</string>
+    <string name="picture_webp_tag">webp</string>
     <string name="picture_go_setting">Configuración</string>
     <string name="picture_jurisdiction">Acceso a la tarjeta de memoria denegado</string>
     <string name="picture_know">Entendido</string>
@@ -61,4 +62,9 @@
     <string name="picture_video_error">Video corrupto</string>
     <string name="picture_video_toast">No hay vista previa del video</string>
     <string name="picture_warning">No hay ningún archivo</string>
+
+    <string name="ucrop_gif_tag" tools:override="true">gif</string>
+    <string name="ucrop_label_edit_photo" tools:override="true">Editar foto</string>
+    <string name="ucrop_label_original" tools:override="true">Original</string>
+    <string name="ucrop_menu_crop" tools:override="true">Recortar</string>
 </resources>

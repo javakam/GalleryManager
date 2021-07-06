@@ -1,4 +1,4 @@
 include ':picture_library'
-include ':ucrop'
 include ':app'
+//include ':ucrop'
 rootProject.name = "GalleryManager"

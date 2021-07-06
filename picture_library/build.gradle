@@ -4,14 +4,16 @@ plugins {
 }
 
 android {
-    compileSdkVersion config.compileSdkVersion
-    buildToolsVersion config.buildToolsVersion
+    compileSdkVersion cfgs.compileSdkVersion
+    buildToolsVersion cfgs.buildToolsVersion
 
     defaultConfig {
-        minSdkVersion config.minSdkVersion
-        targetSdkVersion config.targetSdkVersion
-        versionCode config.versionCode
-        versionName config.versionName
+        minSdkVersion cfgs.minSdkVersion
+        targetSdkVersion cfgs.targetSdkVersion
+        versionCode cfgs.versionCode
+        versionName cfgs.versionName
+
+        vectorDrawables.useSupportLibrary = true
     }
 
     buildTypes {
@@ -31,29 +33,26 @@ android {
 //    kotlinOptions {
 //        jvmTarget = "1.8"
 //    }
+
+    resourcePrefix 'ucrop_'
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation "androidx.appcompat:appcompat:1.2.0"
-    implementation "androidx.recyclerview:recyclerview:1.2.0"
-    implementation "androidx.concurrent:concurrent-futures:1.1.0"
-    implementation "androidx.annotation:annotation-experimental:1.1.0-alpha01"
-
-    implementation "androidx.exifinterface:exifinterface:1.3.2"
-    implementation "androidx.camera:camera-lifecycle:1.0.0-rc01"
-    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
-    implementation "androidx.camera:camera-view:1.0.0-alpha20"
-
-    implementation "com.squareup.okio:okio:2.9.0"
-
-    //https://juejin.cn/post/6934981195583356965
-    //implementation 'com.github.javakam:file.core:1.4.2@aar'
-    api project(':ucrop')
+    implementation "androidx.appcompat:appcompat:${cfgs.version_appcompat}"
+    implementation "androidx.recyclerview:recyclerview:${cfgs.version_recyclerview}"
+    implementation "androidx.concurrent:concurrent-futures:${cfgs.futures_version}"
+    implementation "androidx.annotation:annotation-experimental:${cfgs.experimental_version}"
+    implementation "com.squareup.okio:okio:${cfgs.okio_version}"
+    implementation "androidx.exifinterface:exifinterface:${cfgs.androidx_exifinterface_version}"
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:${cfgs.localbroadcastmanager}"
+    implementation "androidx.camera:camera-view:${cfgs.camerax_view}"
+    implementation "androidx.transition:transition:${cfgs.androidx_transition_version}"
+    implementation "androidx.camera:camera-lifecycle:${cfgs.camerax_version}"
 }
 
 ext {
     PUBLISH_ARTIFACT_ID = 'gallery'
-    PUBLISH_VERSION = rootProject.ext.config.versionPicture
+    PUBLISH_VERSION = rootProject.ext.cfgs.versionPicture
 }
 apply from: "${rootProject.projectDir}/publish.gradle"
+//apply from: '../publish.gradle'

@@ -48,7 +48,7 @@
             android:src="@drawable/picture_icon_delete" />
     </RelativeLayout>
 
-    <ando.gallery.widget.PreviewViewPager
+    <com.luck.picture.lib.widget.PreviewViewPager
         android:id="@+id/preview_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

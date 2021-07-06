@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/picture_color_white"
     android:fitsSystemWindows="true"
-    tools:context="ando.gallery.PictureSelectorActivity">
+    tools:context="com.luck.picture.lib.PictureSelectorActivity">
 
     <include layout="@layout/picture_title_bar" />
 
     <include layout="@layout/picture_bottom_bar" />
 
-    <ando.gallery.widget.RecyclerPreloadView
+    <com.luck.picture.lib.widget.RecyclerPreloadView
         android:id="@+id/picture_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

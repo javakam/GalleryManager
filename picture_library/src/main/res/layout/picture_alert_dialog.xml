@@ -8,8 +8,8 @@
     android:padding="10dp">
 
     <ProgressBar
-        android:layout_width="28dp"
-        android:layout_height="28dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_horizontal"
         android:indeterminateBehavior="repeat"
         android:indeterminateDrawable="@drawable/picture_anim_progress" />

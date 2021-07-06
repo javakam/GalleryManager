@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/app_color_white"
-    tools:context="ando.gallery.core.MainActivity">
+    tools:context="com.luck.pictureselector.MainActivity">
 
     <RelativeLayout
         android:id="@+id/rl_title"
@@ -181,7 +181,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
-                    android:text="* 开启原图功能，用户就可以自由选择原图；可能会导致压缩、裁剪功能失效。"
+                    android:text="* 开启原图功能，用户就可以自由选择原图；但会跳过裁剪功能哦"
                     android:textColor="@android:color/holo_red_dark"
                     android:textSize="10dp"
                     android:visibility="gone" />
@@ -299,6 +299,14 @@
                         android:textSize="14sp" />
 
                     <RadioButton
+                        android:id="@+id/rb_portugal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="葡萄牙语"
+                        android:textColor="@color/app_color_53575e"
+                        android:textSize="14sp" />
+
+                    <RadioButton
                         android:id="@+id/rb_system"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -339,6 +347,13 @@
                         android:textColor="@color/app_color_53575e"
                         android:textSize="14sp" />
 
+                    <RadioButton
+                        android:id="@+id/rb_audio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="音频"
+                        android:textColor="@color/app_color_53575e"
+                        android:textSize="14sp" />
                 </RadioGroup>
 
                 <CheckBox

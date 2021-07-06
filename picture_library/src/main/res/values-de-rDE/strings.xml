@@ -19,7 +19,8 @@
     <string name="picture_empty">Sie können mit Ihrer Kamera ein Foto oder Video aufnehmen</string>
     <string name="picture_audio_empty">Sie können Audio mit der Systemaufzeichnung aufnehmen</string>
     <string name="picture_min_img_num">Die Mindestauswahl an Bildern darf %1$s nicht unterschreiten</string>
-    <string name="picture_gif_tag">Bewegen</string>
+    <string name="picture_gif_tag">gif</string>
+    <string name="picture_webp_tag">webp</string>
     <string name="picture_jurisdiction">Leseberechtigungen für Speicherkarten verweigert</string>
     <string name="picture_camera">Systemkameraberechtigung verweigert</string>
     <string name="picture_audio">Holen Sie sich die Systemaufzeichnungsberechtigung verweigert</string>
@@ -61,4 +62,9 @@
     <string name="picture_go_setting">Set up</string>
     <string name="picture_know">Das stimmt</string>
     <string name="picture_data_null">Hier ist es leer…</string>
+
+    <string name="ucrop_label_edit_photo">Foto editieren</string>
+    <string name="ucrop_label_original">Original</string>
+    <string name="ucrop_menu_crop">Zuschneiden</string>
+    <string name="ucrop_gif_tag">Bewegen</string>
 </resources>

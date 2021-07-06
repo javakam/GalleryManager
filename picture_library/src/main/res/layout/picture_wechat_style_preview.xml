@@ -8,7 +8,7 @@
     <include layout="@layout/picture_new_title_bar" />
 
 
-    <ando.gallery.widget.PreviewViewPager
+    <com.luck.picture.lib.widget.PreviewViewPager
         android:id="@+id/preview_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:layout_above="@id/select_bar_layout"
-        android:background="@color/picture_color_ec"
+        android:background="@color/picture_color_66"
         android:visibility="gone" />
 
     <androidx.recyclerview.widget.RecyclerView

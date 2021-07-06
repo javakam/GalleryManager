@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="ando.gallery">
+    package="com.luck.picture.lib">
 
     <uses-sdk tools:overrideLibrary="androidx.camera.view,
     androidx.camera:camera-camera2,
     androidx.camera.camera2,androidx.camera.lifecycle,
     androidx.camera.core" />
 
-    <!--适配Android R包可见性 开始-->
-    <queries package="${applicationId}">
-        <intent>
-            <action android:name="android.media.action.IMAGE_CAPTURE" />
-        </intent>
-        <intent>
-            <action android:name="android.media.action.ACTION_VIDEO_CAPTURE" />
-        </intent>
-    </queries>
-    <!--适配Android R包可见性 结束-->
-
     <application>
         <provider
-            android:name="ando.gallery.PictureFileProvider"
-            android:authorities="${applicationId}.provider"
+            android:name="com.luck.picture.lib.PictureFileProvider"
+            android:authorities="${applicationId}.luckProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -31,37 +20,42 @@
         </provider>
 
         <activity
-            android:name="ando.gallery.PictureSelectorActivity"
+            android:name=".PictureSelectorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name="ando.gallery.PictureSelectorWeChatStyleActivity"
+            android:name=".PictureSelectorWeChatStyleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name="ando.gallery.PictureSelectorCameraEmptyActivity"
+            android:name=".PictureSelectorCameraEmptyActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@style/Picture.Theme.Translucent" />
         <activity
-            android:name="ando.gallery.PictureCustomCameraActivity"
+            android:name=".PictureCustomCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
 
         <activity
-            android:name="ando.gallery.PicturePreviewActivity"
+            android:name=".PicturePreviewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name="ando.gallery.PictureSelectorPreviewWeChatStyleActivity"
+            android:name=".PictureSelectorPreviewWeChatStyleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
         <activity
-            android:name="ando.gallery.PictureVideoPlayActivity"
+            android:name=".PictureVideoPlayActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensor" />
         <activity
-            android:name="ando.gallery.PictureExternalPreviewActivity"
+            android:name=".PictureExternalPreviewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize" />
+
         <activity
-            android:name=".ucrop.UCropActivity"
+            android:name=".PicturePlayAudioActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Base.Theme.NoActionBar" />
         <activity
-            android:name=".ucrop.PictureMultiCuttingActivity"
+            android:name="com.yalantis.ucrop.PictureMultiCuttingActivity"
             android:theme="@style/Base.Theme.NoActionBar" />
 
     </application>

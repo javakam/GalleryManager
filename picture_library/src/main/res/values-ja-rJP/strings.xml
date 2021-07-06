@@ -20,6 +20,7 @@
     <string name="picture_audio_empty">システムを使って音声を録音することができます</string>
     <string name="picture_min_img_num">画像の最低値は %1$s 枚までとする</string>
     <string name="picture_gif_tag">动図</string>
+    <string name="picture_webp_tag">webp</string>
     <string name="picture_jurisdiction">メモリーカードの読み取り権限が拒否された</string>
     <string name="picture_camera">システムカメラの取得権限は拒否される</string>
     <string name="picture_audio">システムの録音権の取得は拒否される</string>
@@ -60,4 +61,10 @@
     <string name="picture_go_setting">設定</string>
     <string name="picture_know">はい</string>
     <string name="picture_data_null">データがありません…</string>
+
+    <string name="ucrop_label_original">元の比率</string>
+    <string name="ucrop_label_edit_photo">切り取り</string>
+
+    <string name="ucrop_menu_crop">切り取り</string>
+    <string name="ucrop_gif_tag">gif図</string>
 </resources>
